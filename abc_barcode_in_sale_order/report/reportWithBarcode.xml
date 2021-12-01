@@ -1,0 +1,9 @@
+<odoo>
+  <data>
+    <template id="report_saleorder_inherit_abc1" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='oe_structure'][1]" position="after">
+            <t t-if="doc.state not in ['draft','sent']"> <img alt="Errore Barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %                  ('Code128', doc.name, 400, 100)"/> </t>
+        </xpath>
+    </template>
+  </data>
+</odoo>
